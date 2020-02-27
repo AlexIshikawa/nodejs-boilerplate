@@ -40,6 +40,12 @@ class UserController {
       .then(savedUser => res.json(savedUser))
       .catch(err => next(err));
   }
+
+  async index(req, res) {
+    const data = await User.find({});
+
+    return res.json(data);
+  }
 }
 
 export default new UserController();
