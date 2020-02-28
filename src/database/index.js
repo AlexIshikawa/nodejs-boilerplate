@@ -1,11 +1,11 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 class Database {
   constructor() {
-    this.mongo();
+    this.mongo()
   }
 
-  mongoURI = process.env.MONGO_URL;
+  mongoURI = process.env.MONGO_URL
 
   mongo() {
     mongoose
@@ -14,10 +14,10 @@ class Database {
         useFindAndModify: true
       })
       .then(() => {
-        console.log("MongoDB Connected");
+        console.log('MongoDB Connected')
       })
-      .catch(err => console.log(err));
+      .catch(err => console.log(err))
   }
 }
 
-export default new Database();
+export default new Database()
